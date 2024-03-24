@@ -1,13 +1,29 @@
 import { useState } from "react";
+import { Button } from "./Button";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <>
-      <div></div>
+      <div>
+        <Button>Click!</Button>
+      </div>
+      <div>
+        <Button></Button>
+      </div>
+      <div>
+        <Button></Button>
+      </div>
+      <div>
+        <Button></Button>
+      </div>
+      <div>
+        <Button></Button>
+      </div>
+      <div>
+        <Button></Button>
+      </div>
     </>
   );
-}
+};
 
 export default App;
