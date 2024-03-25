@@ -1,37 +1,29 @@
 import { useState } from "react";
 import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 import { Button } from "./components/Button";
+import { Accordion } from "./components/Accordion";
 
 const App = () => {
-  const handleClick = () => {
-    console.log("Clicked");
-  };
+  const items = [
+    {
+      id: 1,
+      label: "react",
+      content: "used to buid frontend",
+    },
+    {
+      id: 2,
+      label: "redux",
+      content: "used for state managemnt",
+    },
+    {
+      id: 3,
+      label: ".net",
+      content: "used to buid backtend",
+    },
+  ];
   return (
     <>
-      <div>
-        <Button primary rounded outline className="mb-5" onClick={handleClick}>
-          <GoBell />
-          Click!
-        </Button>
-      </div>
-      <div>
-        <Button secondary outline onMouseEnter={handleClick}>
-          <GoCloudDownload />
-          Buy Now!
-        </Button>
-      </div>
-      <div>
-        <Button success rounded onMouseLeave={handleClick}>
-          <GoDatabase />
-          Sea Deal!
-        </Button>
-      </div>
-      <div>
-        <Button warning>Hide Ads!</Button>
-      </div>
-      <div>
-        <Button danger>Cart</Button>
-      </div>
+      <Accordion items={items} />
     </>
   );
 };
