@@ -2,29 +2,31 @@ import { useState } from "react";
 import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 import { Button } from "./components/Button";
 import { Accordion } from "./components/Accordion";
+import { DropDown } from "./components/DropDown";
 
 const App = () => {
-  const items = [
+  const [selection, setSelection] = useState(null);
+  const handleSelection = (option) => {
+    setSelection(option);
+  };
+
+  const options = [
     {
-      id: 1,
-      label: "react",
-      content: "used to buid frontend",
+      label: "Red",
+      value: "red",
     },
     {
-      id: 2,
-      label: "redux",
-      content: "used for state managemnt",
+      label: "Green",
+      value: "green",
     },
     {
-      id: 3,
-      label: ".net",
-      content: "used to buid backtend",
+      label: "Blue",
+      value: "blue",
     },
   ];
+
   return (
-    <>
-      <Accordion items={items} />
-    </>
+    <DropDown value={selection} onChange={handleSelection} options={options} />
   );
 };
 
