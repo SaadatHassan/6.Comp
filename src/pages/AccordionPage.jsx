@@ -2,7 +2,7 @@ import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 
 import { Accordion } from "../components/Accordion";
 
-const AccordionPage = () => {
+export const AccordionPage = () => {
   const items = [
     {
       id: 1,
