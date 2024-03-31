@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
 export const Modal = ({ onClose, children, actionBar }) => {
+  // for disabling scroll
   useEffect(() => {
     document.body.classList.add("overflow-hidden");
 
