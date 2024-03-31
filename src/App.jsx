@@ -1,17 +1,12 @@
-import { useState } from "react";
 import { Route } from "./components/Route";
 import { AccordionPage } from "./pages/AccordionPage";
 import { ButtonPage } from "./pages/ButtonPage";
 import { DropDownPage } from "./pages/DropDownPage";
-import { Panel } from "./components/Panel";
 import { SideBar } from "./components/SideBar";
+import { ModalPage } from "./pages/ModalPage";
+import { Table } from "./components/Table";
 
 const App = () => {
-  const [selection, setSelection] = useState(null);
-  const handleSelection = (option) => {
-    setSelection(option);
-  };
-
   const options = [
     {
       label: "Red",
@@ -39,6 +34,12 @@ const App = () => {
         </Route>
         <Route path="/button">
           <ButtonPage />
+        </Route>
+        <Route path="/modal">
+          <ModalPage />
+        </Route>
+        <Route path="/table">
+          <Table />
         </Route>
       </div>
     </div>
