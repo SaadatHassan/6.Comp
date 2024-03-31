@@ -9,9 +9,28 @@ export const TablePage = () => {
     { name: "Lime", color: "bg-green-400", score: 7 },
   ];
 
+  const config = [
+    {
+      label: "Name",
+      render: (fruit) => fruit.name,
+    },
+    {
+      label: "Color",
+      render: (fruit) => <div className={`p-2 m-2 ${fruit.color}`} />,
+    },
+    {
+      label: "Score",
+      render: (fruit) => fruit.score,
+    },
+  ];
+
+  const keyFn = (fruit) => {
+    return fruit.name;
+  };
+
   return (
     <div>
-      <Table data={fruits} />
+      <Table data={fruits} config={config} keyFn={keyFn} />
     </div>
   );
 };

@@ -1,28 +1,29 @@
 import React from "react";
 
-export const Table = ({ data }) => {
-  const renderedRows =
-    data &&
-    data.map((row) => {
+export const Table = ({ data, config, keyFn }) => {
+  const renderedHeaders = config.map((header, index) => {
+    return <th key={header.label}>{header.label}</th>;
+  });
+
+  const renderedRows = data.map((row) => {
+    const renderedCells = config.map((cell, index) => {
       return (
-        <tr key={row.name}>
-          <td className="p-3">{row.name}</td>
-          <td className="p-3">
-            <div className={`p-2 m-2 ${row.color}`}></div>
-          </td>
-          <td className="p-3">{row.score}</td>
-        </tr>
+        <td key={cell.label} className="p-2">
+          {cell.render(row)}
+        </td>
       );
     });
+    return (
+      <tr className="border-b" key={keyFn(row)}>
+        {renderedCells}
+      </tr>
+    );
+  });
 
   return (
     <table className="table-auto border-spacing-2">
       <thead>
-        <tr className="border-b-2">
-          <th>Fruit</th>
-          <th>Color</th>
-          <th>Score</th>
-        </tr>
+        <tr className="border-b-2">{renderedHeaders}</tr>
       </thead>
       <tbody>{renderedRows}</tbody>
     </table>
