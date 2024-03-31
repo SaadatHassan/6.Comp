@@ -4,7 +4,7 @@ import { ButtonPage } from "./pages/ButtonPage";
 import { DropDownPage } from "./pages/DropDownPage";
 import { SideBar } from "./components/SideBar";
 import { ModalPage } from "./pages/ModalPage";
-import { Table } from "./components/Table";
+import { TablePage } from "./pages/TablePage";
 
 const App = () => {
   const options = [
@@ -39,7 +39,7 @@ const App = () => {
           <ModalPage />
         </Route>
         <Route path="/table">
-          <Table />
+          <TablePage />
         </Route>
       </div>
     </div>
