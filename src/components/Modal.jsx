@@ -12,6 +12,7 @@ export const Modal = ({ onClose, children, actionBar }) => {
     };
   }, []);
 
+  //for creating a portal we have to create a div in index.html and we will make a portal to that div
   return ReactDOM.createPortal(
     <div>
       <div
