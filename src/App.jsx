@@ -5,6 +5,7 @@ import { DropDownPage } from "./pages/DropDownPage";
 import { SideBar } from "./components/SideBar";
 import { ModalPage } from "./pages/ModalPage";
 import { TablePage } from "./pages/TablePage";
+import { CounterPage } from "./pages/CounterPage";
 
 const App = () => {
   const options = [
@@ -40,6 +41,9 @@ const App = () => {
         </Route>
         <Route path="/table">
           <TablePage />
+        </Route>
+        <Route path="/counter">
+          <CounterPage initialCount={0} />
         </Route>
       </div>
     </div>
